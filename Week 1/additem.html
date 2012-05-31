@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<!-- Character Set Meta -->
+		<meta charset="utf-8" />
+
+		<!-- Description & Key words -->
+		<meta name = "description" content= "My first Application." />
+		<meta name = "keywords" content = "html5, mobile development, Full Sail University"/>
+		<meta name="robots" content="noindex, nofollow">
+				<!-- Mobile viewport optimization -->
+		<meta name = "HandheldFriendly" content = "True" />
+		<meta name = "MobileOptimized" content = "320" />
+		<meta name = "viewport" content = "user-scalable=no, width=device-width" />
+		
+		<!--Page Title-->
+		<title>My First Form</title>
+	</head>
+	<body>
+		<!-- Header 1-->
+		<h1>My First Form</h1>
+		<form action = "#"  method = "post" >
+		
+		<fieldset>
+			<legend>Information</legend>
+				<ul>
+					<li><label for="fname">First Name:</label><input type="text" id="fname" /></li>
+					<li><label for="lname">Last Name:</label><input type="text" id="lname"  /></li>
+					<li><label for="pword">Password:</label><input type="password" id="pword" /></li>
+					<li><label for="cpword">Confirm Password[Disabled]:</label><input type="password" id="cpword" disabled /></li>
+					<li><label for="email">Email:</label><input type="email" id="email" placeholder="example@email.com" /></li>
+					<li><label for="url">Fav Website:</label><input type="url" id="url" placeholder="www.apple.com" /></li>
+				</ul>
+		</fieldset>
+		
+
+		<fieldset>
+			<legend>Questions</legend>
+				<li>Check your favourites:
+					<ul>
+						<li><input type="checkbox" checked value="Pepsi" id="pepsi"/><label for="pepsi"/>Pepsi</label></li>
+						<li><input type="checkbox" checked value="Coke" id="coke"/><label for="coke"/>Coke</label></li>
+						<li><input type="checkbox" checked value="Mt. Dew" id="mtdew"/><label for="mtdew"/>Mt. Dew</label></li>
+						<li><input type="checkbox" checked value="Dr. Pepper" id="drpepper"/><label for="drpepper"/>Dr. Pepper</label></li>
+					</ul>
+				</li>
+				<li>Are you male or female?:
+					<ul>
+						<li><input type="radio" checked value="Male" id="male" name="sex" /><label for="male">Male</label></li>
+						<li><input type="radio" checked value="Female" id="female" name="sex" /><label for="female">Female</label></li>
+					</ul>
+				</li>
+				<li>
+					<label for="travel">Preferred Method of Travel</label>
+					<select id="travel">
+						<optgroup label="Self Powered Modes">
+							<option value="Walk">Walk</option>
+							<option value="Bike">Bike</option>
+						</optgroup>
+						<optgroup label="Machine Powered">
+							<option value="Car">Car</option>
+							<option value="Bus">Bus</option>
+							<option value="Train">Trian</option>
+							<option value="Plane">Plane</option>
+						</optgroup>
+
+					</select>
+				</li>
+				<li><label for="comments">What's you favourit vacation?:</label><textarea id="comments">Type your answer here.</textarea></li>
+				<li><input type="hidden" value="true"/></li>
+			</ul>
+		</fieldset>
+
+		<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
