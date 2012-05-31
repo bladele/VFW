@@ -14,11 +14,11 @@
 		<meta name = "viewport" content = "user-scalable=no, width=device-width" />
 		
 		<!--Page Title-->
-		<title>My First Form</title>
+		<title>Enlistment Form</title>
 	</head>
 	<body>
-		<!-- Header 1-->
-		<h1>My First Form</h1>
+		
+		<h1>Enlistment Form</h1>
 		<form action = "#"  method = "post" >
 		
 		<fieldset>
@@ -29,45 +29,54 @@
 					<li><label for="pword">Password:</label><input type="password" id="pword" /></li>
 					<li><label for="cpword">Confirm Password[Disabled]:</label><input type="password" id="cpword" disabled /></li>
 					<li><label for="email">Email:</label><input type="email" id="email" placeholder="example@email.com" /></li>
-					<li><label for="url">Fav Website:</label><input type="url" id="url" placeholder="www.apple.com" /></li>
+					
 				</ul>
 		</fieldset>
 		
 
 		<fieldset>
-			<legend>Questions</legend>
+			<legend>What kind of love do you espouse?</legend>
 				<li>Check your favourites:
 					<ul>
-						<li><input type="checkbox" checked value="Pepsi" id="pepsi"/><label for="pepsi"/>Pepsi</label></li>
-						<li><input type="checkbox" checked value="Coke" id="coke"/><label for="coke"/>Coke</label></li>
-						<li><input type="checkbox" checked value="Mt. Dew" id="mtdew"/><label for="mtdew"/>Mt. Dew</label></li>
-						<li><input type="checkbox" checked value="Dr. Pepper" id="drpepper"/><label for="drpepper"/>Dr. Pepper</label></li>
+						<li><input type="checkbox" checked value="Agape" id="agape"/><label for="agape"/>Agape [of the soul]</label></li>
+						<li><input type="checkbox" checked value="Eros" id="eros"/><label for="eros"/>Eros [of passion]</label></li>
+						<li><input type="checkbox" checked value="Philia" id="philia"/><label for="philia"/>Philia [of the mind]</label></li>
+						<li><input type="checkbox" checked value="Storge" id="storge"/><label for="storge"/>Storge [parental]</label></li>
+						<li><input type="checkbox" checked value="Xenia" id="xenia"/><label for="xenia"/>Xenia [hospitality]</label></li>
 					</ul>
 				</li>
-				<li>Are you male or female?:
+				<li>Your Gender?:
 					<ul>
 						<li><input type="radio" checked value="Male" id="male" name="sex" /><label for="male">Male</label></li>
 						<li><input type="radio" checked value="Female" id="female" name="sex" /><label for="female">Female</label></li>
 					</ul>
 				</li>
 				<li>
-					<label for="travel">Preferred Method of Travel</label>
-					<select id="travel">
-						<optgroup label="Self Powered Modes">
-							<option value="Walk">Walk</option>
-							<option value="Bike">Bike</option>
+					<label for="expression">Preferred Mode of Expressing Love</label>
+					<select id="expression">
+						<optgroup label="Labor of Love">
+							<option value="Work">Work</option>
+							<option value="Hobby">Hobby</option>
 						</optgroup>
-						<optgroup label="Machine Powered">
-							<option value="Car">Car</option>
-							<option value="Bus">Bus</option>
-							<option value="Train">Trian</option>
-							<option value="Plane">Plane</option>
+						<optgroup label="Relational Love">
+							<option value="Romance">Romance</option>
+							<option value="Parental">Parental</option>
+							<option value="Friendship">Friendship</option>							
+						</optgroup>
+						<optgroup label="Art of Love">
+							<option value="Art">Art</option>
+							<option value="Music">Music</option>
+							<option value="Literature">Literature</option>	
+							<option value="Film">Film</option>						
+						</optgroup>
+						<optgroup label="All is Love">
+							<option value="All">All</option>					
 						</optgroup>
 
 					</select>
 				</li>
-				<li><label for="comments">What's you favourit vacation?:</label><textarea id="comments">Type your answer here.</textarea></li>
-				<li><input type="hidden" value="true"/></li>
+				<li><label for="comments">How do you define love?:</label><textarea id="comments">Type your answer here.</textarea></li>
+				<!-- <li><input type="hidden" value="true"/></li> -->
 			</ul>
 		</fieldset>
 
