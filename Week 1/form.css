@@ -1,0 +1,29 @@
+/* Title: form.html Styles
+by: Bodunrin Ladele
+for: VFW 1206
+*/
+
+
+/*Make it look like an iPhone*/
+html{
+	background-color: #E1DFD3;
+}
+body{
+	font-family: "Arial", "Helvetica", sans-serif; width: 571px;margin: auto;padding: 10px;}
+#site-wrapper{background: url(.../img.iPhoneBG.jpg) no-repeat;height:885;padding-top:20px;}
+#content{width: 480px;height 690px;overflow: scroll;} 
+
+h1 {
+	margin: 10px 20px;
+	border: 1px solid black;
+	padding: 10px;
+	background: #ff0000;
+	border:;
+	outline:;
+	width:;
+	height:;
+	display:;
+	overflow: ;
+	word-wrap:;
+
+}

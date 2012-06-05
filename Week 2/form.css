@@ -1,0 +1,14 @@
+/* Title: form.html Styles
+by: Bodunrin Ladele
+for: VFW 1206
+*/
+
+
+/*Make it look like an iPhone*/
+h1 {
+	margin: 10px 20px;
+	border: 1px solid black;
+	padding: 10px;
+	background: #ff0000;
+
+}
