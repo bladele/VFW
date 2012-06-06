@@ -5,10 +5,38 @@ for: VFW 1206
 
 
 /*Make it look like an iPhone*/
-h1 {
-	margin: 10px 20px;
-	border: 1px solid black;
-	padding: 10px;
-	background: #ff0000;
 
-}
+body{	/*
+		font-family: "Arial", "Helvetica", sans-serif; width: 571px;margin: auto;padding: 10px;}
+		#site-wrapper{background: url(.../img.iPhoneBG.jpg) no-repeat;height:885;padding-top:20px;}
+		#content{width: 480px;height: 690px;overflow: scroll;
+		*/
+	} 
+
+h1 {
+		margin: 10px 20px;
+		border: 1px solid #000;
+		padding: 10px;
+		background-color: aqua;
+		width: 50%;
+		visibility: ;
+		word-wrap:;
+
+	}
+
+p 	{
+		color: #ff0000;
+		font-style: "Times New Roman", Times, serif;
+		font-weight: bold;
+		font: italic small bold 12px Arial;
+		line-height:22px;
+		letter-spacing: .08em;
+		text-align: left;
+		text-indent:;
+	}
+
+label {
+		display: none/inline/block/list-item/run-in/compact/marker;
+		border-right: 1px solid #999;
+	  }
+
