@@ -5,6 +5,9 @@ for: VFW 1206
 
 
 /*Make it look like an iPhone*/
+html {
+    background-color: #DBE1E5;
+}
 
 body{	/*
 		font-family: "Arial", "Helvetica", sans-serif; width: 571px;margin: auto;padding: 10px;}
@@ -15,10 +18,12 @@ body{	/*
 
 h1 {
 		margin: 10px 20px;
-		border: 1px solid #000;
+		border: 5px solid #000;
+		border-radius:10px;
 		padding: 10px;
-		background-color: aqua;
-		width: 50%;
+		background-color: #8196AE;
+		width: 85%;
+		text-align: center;
 		visibility: ;
 		word-wrap:;
 
@@ -36,7 +41,8 @@ p 	{
 	}
 
 label {
-		display: none/inline/block/list-item/run-in/compact/marker;
-		border-right: 1px solid #999;
+		display: block;
+		font-family: Arial, "MS Trebuchet", sans-serif;
+		
 	  }
 
