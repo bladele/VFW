@@ -23,6 +23,7 @@
 		<nav>
 			<a href="#" id="clear">Clear Stored Data</a>
 			<a href="#" id="displaylink">Display Data</a>
+			<a href="additem.html" id="addNew" style=""display:none;>Add New Item</a>
 		</nav>
 		<form action = "#"  method = "post" id="loveLog">
 			<fieldset id="eventLog">
@@ -30,35 +31,7 @@
 				<span>* Fields are required</span>
 				<ul id="errors"></ul>
 				<ul id="questions">
-				<label for="eventtype">Event Type</label>
-					<select id="event">Choose an Event
-						<optgroup label="Agape - of the soul">
-							<option value="nature">Nature</option>
-							<option value="nature">Nature</option>
-							<option value="Divine">Divine</option>
-							<option value="Mission">Mission</option>
-						</optgroup>
-						<optgroup label="Eros - of passion">
-							<option value="Romance">Romance</option>
-							<option value="Work">Work</option>
-							<option value="Hobby">Hobby</option>							
-						</optgroup>
-						<optgroup label="Philia - of the mind">
-							<option value="Art">Art</option>
-							<option value="Music">Music</option>
-							<option value="Literature">Literature</option>	
-							<option value="Film">Film</option>						
-						</optgroup>
-						<optgroup label="Storge - parental">
-							<option value="Children">Children</option>
-							<option value="Pets">Pets</option>					
-						</optgroup>
-						<optgroup label="Xenia - hospitality">
-							<option value="Host">Host</option>		
-							<option value="Guest">Guest</option>			
-						</optgroup>
-					</select>
-
+					<li id="select"><label for="eventsTypes">*Add Event:</label></li><select id="eventTypes"></select>
 					<li><label for="eventtitle">Event Title:</label><input type="text" id="eventname" /></li>
 					<li><label for="location">Location:</label><input type="text" id="location"  /></li>
 					<li><label for="date">Event Date:</label><input type="date" id="date" /></li>
