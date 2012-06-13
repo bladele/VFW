@@ -34,9 +34,9 @@ function makeCats(){
 	//Find value of selected radio botton.
 function getSelectedRadio(){
 	var radio = document.forms[0].role;
-	for(var i=0; i<radios.length; i++){
-		if(radios[i].checked){
-			roleValue = radios[i].value;
+	for(var i=0; i<radio.length; i++){
+		if(radio[i].checked){
+			roleValue = radio[i].value;
 		}
 	}
 }
@@ -47,13 +47,13 @@ function toggleControls(n){
 		case "on":
 			$('loveLog').style.display = "none";
 			$('clear').style.display = "inline";
-			$('displayLink').style.display = "none";
+			$('displaylink').style.display = "none";
 			$('addNew').style.display = "inline";
 			break;
 		case "off":
 			$('loveLog').style.display = "block";
 			$('clear').style.display = "inline";
-			$('displayLink').style.display = "inline";
+			$('displaylink').style.display = "inline";
 			$('addNew').style.display = "none";
 			$('items').style.display = "none";
 			break;
@@ -103,10 +103,10 @@ function getData(){
 		var makeSublist = document.createElement('ul');
 		makeli.appendChild(makeSublist);
 		for(var n in obj){
-			var makeSublist = document.createElement('li');
-			makeSublist.appendChild(makeSublist);
+			var makeSublistLi = document.createElement('li');
+			makeSublist.appendChild(makeSublistLi);
 			var optSubText = obj[n][0] + " " + obj[n][1];
-			makeSublist.innerHTML = optSubText;
+			makeSublistLi.innerHTML = optSubText;
 		}
 
 	}
@@ -133,8 +133,8 @@ makeCats();
 
 
 //Set Link & Submit Click Events 
-var displayLink = $('displaylink');
-displayLink.addEventListener("click", getData);
+var displaylink = $('displaylink');
+displaylink.addEventListener("click", getData);
 var clearLink = $('clear');
 clearLink.addEventListener("click", clearLocal);
 var save = $('submit');
