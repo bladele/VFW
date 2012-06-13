@@ -95,6 +95,7 @@ function getData(){
 	$('items').style.display = "display";
 	for(var i = 0, len=localStorage.length; i<len; i++){
 		var makeli = document.createElement('li');
+		var linksLi = document.createElement('li');
 		makeList.appendChild(makeli);
 		var key = localStorage.key(i);
 		var value = localStorage.getItem(key);
@@ -107,9 +108,37 @@ function getData(){
 			makeSublist.appendChild(makeSublistLi);
 			var optSubText = obj[n][0] + " " + obj[n][1];
 			makeSublistLi.innerHTML = optSubText;
+			makeSublist.appendChild(linksLi);
 		}
+		makeEventLinks(localStorage.key(i), linksLi); //Creat edit and delet buttons/link for each item in local storage.
 
 	}
+}
+
+//Make Item Links
+//Create the edit and delet links for each stored item when displayed.
+function makeEventLinks(key, linksLi) {
+	//add edit single item link
+	var editLink = document.createElement('a');
+	editLink.href = "#"; 
+	editLink.key = key;
+	var editText = "Edit Log";
+	//editLink.addEventListener("click", editItem);
+	editLink.innerHTML = editText;
+	linksLi.appendChild(editLink);
+
+	//add line break
+	var breakTag = document.createElement('br');
+	linksLi.appendChild(breakTag);
+
+	//add delete single item link
+	var deleteLink = document.createElement('a');
+	deleteLink.href = "#";
+	deleteLink.key = key;
+	var deleteText = "Delete Log";
+	//deleteLink.addEventListener("click", deleteItem);
+	deleteLink.innerHTML = deleteText;
+	linksLi.appendChild(deleteLink);
 }
 
 function clearLocal(){
@@ -127,6 +156,7 @@ function clearLocal(){
 var eventTypes = ["--Choose An Event Type--", "Agape[of the soul]", "Eros[of passion]", "Philia[of the mind]", "Storge[parental]", "Xenia[hospitality]"],
 	roleValue
 ;
+
 makeCats();
 
 
