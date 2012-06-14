@@ -6,14 +6,11 @@ for: VFW 1206
 
 /*Make it look like an iPhone*/
 html {
-    background-color: #DBE1E5;
-}
+    	background-color: #DBE1E5;
+	}
 
-body{	/*
-		font-family: "Arial", "Helvetica", sans-serif; width: 571px;margin: auto;padding: 10px;}
-		#site-wrapper{background: url(.../img.iPhoneBG.jpg) no-repeat;height:885;padding-top:20px;}
-		#content{width: 480px;height: 690px;overflow: scroll;
-		*/
+body{	
+
 	} 
 
 h1 {
