@@ -142,7 +142,7 @@ function makeEventLinks(key, linksLi) {
 	deleteLink.href = "#";
 	deleteLink.key = key;
 	var deleteText = "Delete Log";
-	//deleteLink.addEventListener("click", deleteLog);
+	deleteLink.addEventListener("click", deleteLog);
 	deleteLink.innerHTML = deleteText;
 	linksLi.appendChild(deleteLink);
 }
@@ -189,6 +189,7 @@ function deleteLog(){
 	var ask = confirm("Are you sure you want to delete this log?");
 	if(ask) {
 		localStorage.removeItem(this.key);
+		alert("Log was deleted.");
 		window.location.reload();
 	}else{
 		alert("Love log was NOT deleted.")
@@ -211,7 +212,7 @@ function validate(e) {
 	var getType  = $('eventTypes');
 	var getTitle = $('title');
 	var getDate  = $('date');
-	var getWow	 = $('wow');
+	
 
 
 	//Reset Error Messages.
@@ -219,34 +220,28 @@ function validate(e) {
 		getType.style.border 	= "1px solid black";
 		getTitle.style.border 	= "1px solid black";
 		getDate.style.border 	= "1px solid black";
-		getWow.style.border 	= "1px solid black";
 
 	//Get Error Messages.
 	var messageAry = [];
 	//Event Type Validation
-	if(getType === "--Choose An Event Type--") {
+	if(getType.value === "--Choose An Event Type--") {
 		var typeError = "Please choose an event type.";
 		getType.style.border = "1px solid red";
 		messageAry.push(typeError);
 	}
 	//Title Validation
-	if(getTitle === " ") {
+	if(getTitle.value === "") {
 		var titleError = "Please enter a title.";
 		getTitle.style.border = "1px solid red";
 		messageAry.push(titleError);
 	}
 	//Date Validation
-	if(getDate === " ") {
+	if(getDate.value === "") {
 		var dateError = "Please enter a date.";
 		getDate.style.border = "1px solid red";
 		messageAry.push(dateError);
 	}
-	//Wow Validation
-	if(getWow === " ") {
-		var wowError = "Please rate the event.";
-		getWow.style.border = "1px solid red";
-		messageAry.push(wowError);
-	}
+
 	//If there were any errors, display on the screen.
 	if(messageAry.length >= 1) {
 		for(var i=0, j=messageAry.length; i < j; i++) {
@@ -266,7 +261,7 @@ function validate(e) {
 //Variable defaults
 var eventTypes = ["--Choose An Event Type--", "Agape[of the soul]", "Eros[of passion]", "Philia[of the mind]", "Storge[parental]", "Xenia[hospitality]"],
 	roleValue,
-	errMsg = $('errors');
+	errMsg = $('errors')
 ;
 
 makeCats();
