@@ -31,19 +31,20 @@
 				<span>* Fields are required</span>
 				<ul id="errors"></ul>
 				<ul id="questions">
-					<li id="select"><label for="eventsTypes">*Add Event:</label></li></select>
-					<li><label for="title">Event Title:</label><input type="text" id="title" /></li>
-					<li><label for="location">Location:</label><input type="text" id="location"  /></li>
-					<li><label for="date">Event Date:</label><input type="date" id="date" /></li>
+					<li id="select"><label for="eventsTypes">*Add Event:</label></li>
+					<li><label for="title">*Event Title: </label><input type="text" id="title" /></li>
+					<li><label for="location">Location: </label><input type="text" id="location"  /></li>
+					<li><label for="date">*Event Date: </label><input type="date" id="date" /></li>
+					<li><label for="role">*Your Role In The Event: </label>
 					<ul class="checkbox">
 							<li><input type="radio" id="recipient" value="recipient" name="role" /><label for="recipient">Recipient</label></li>
 							<li><input type="radio" id="donor" value="donor" name="role" /><label for="donor">Donor</label></li>
 					</ul>
-					<li><label for= "Wow Factor">Wow Factor</label><input type="range" min="0" max="100" id="wow"></li>
-					<li><label for="notes">The Details:</label><textarea id="notes">Type your log here.</textarea></li>
+					<li><label for= "Wow Factor">*Wow Factor: </label><input type="range" min="0" max="100" id="wow"></li>
+					<li><label for="notes">The Details: </label><textarea id="notes">Type your log here.</textarea></li>
 				</ul>
 		</fieldset>
-		<input type="button" value="save" id="submit" />
+		<input type="button" value="Save Log" id="submit" />
 		</form>
 		<script src="main.js" type="text/javascript"></script>
 	</body>

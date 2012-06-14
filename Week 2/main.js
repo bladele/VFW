@@ -63,22 +63,28 @@ function toggleControls(n){
 }
 
 
-function storeData(){
-	var id  			= Math.floor(Math.random()*1000000001);
+function storeData(key){
+	//If theres no key, this is a new item and new key is needed.
+	if(!key){
+		var id  			= Math.floor(Math.random()*1000000001);
+	}else {//Set id to existing key being edited(save over the data). Same key will be passed through handler, validate, store data function.
+		id = key;
+	}
+	
 	//Gather up all our form fiel value and store in an object.
 	//Object properties contain array with the form lable and input value.
 	getSelectedRadio();
 	var item 				= {};
-		item.eventTypes		= ["Event Type", $('eventTypes').value];
-		item.title			= ["Event Title", $('title').value];
-		item.location		= ["Location", $('location').value];
-		item.date			= ["Event Date", $('date').value];
-		item.role			= ["Role", roleValue];	
-		item.wow			= ["Wow Factor", $('wow').value];
-		item.notes			= ["The Details", $('notes').value];
+		item.eventTypes		= ["Event Type: ", $('eventTypes').value];
+		item.title			= ["Event Title: ", $('title').value];
+		item.location		= ["Location: ", $('location').value];
+		item.date			= ["Event Date: ", $('date').value];
+		item.role			= ["Role: ", roleValue];	
+		item.wow			= ["Wow Factor: ", $('wow').value];
+		item.notes			= ["The Details: ", $('notes').value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string.
 		localStorage.setItem(id, JSON.stringify(item));
-		alert("Love Log Saved!")
+		alert("Love Log Saved!");
 }
 
 function getData(){
@@ -123,7 +129,7 @@ function makeEventLinks(key, linksLi) {
 	editLink.href = "#"; 
 	editLink.key = key;
 	var editText = "Edit Log";
-	//editLink.addEventListener("click", editItem);
+	editLink.addEventListener("click", editLog);
 	editLink.innerHTML = editText;
 	linksLi.appendChild(editLink);
 
@@ -136,9 +142,57 @@ function makeEventLinks(key, linksLi) {
 	deleteLink.href = "#";
 	deleteLink.key = key;
 	var deleteText = "Delete Log";
-	//deleteLink.addEventListener("click", deleteItem);
+	//deleteLink.addEventListener("click", deleteLog);
 	deleteLink.innerHTML = deleteText;
 	linksLi.appendChild(deleteLink);
+}
+
+//Edit a single log.
+function editLog() {
+	//Grab the data from our item from local storage.
+	var value = localStorage.getItem(this.key);
+	var item = JSON.parse(value);
+
+	//Show the form.
+	toggleControls("off");
+
+	//populate the form fields with current localStorage values.
+	$('eventTypes').value 	= item.eventTypes[1];
+	$('title').value 		= item.title[1];
+	$('location').value 	= item.location[1];
+	$('date').value 		= item.date[1];
+
+	var radio = document.forms(0).role;
+	for(var i=0; i<radio.length; i++) {
+		if(radio[i.value == "Recipient" && item.role[1]] == "Recipient") {
+			radio[i].setAttribute("checked", "checked");
+		} else if(radio[i].value == "Donor" && obj.sex[1] == "Donor"){
+			radio[i].setAttribute("checked", "checked");
+		}
+	}
+
+	$('wow').value 			= item.wow[1];
+	$('notes').value 		= item.notes[1];
+
+	//Remove the initial listner fromt the input 'save log' botton.
+	save.removeEventListener("click", storeData);
+	//Change Submit Button Value to Edit Botton
+	$('submit').value = "Edit Log";
+	var editSubmit = $('submit');
+	/*Save the key value established in this function as a property of the editSubmit event
+	so we can ust that value when we save the data edited.*/
+	editSubmit.addEventListener("click", validate);
+	editSubmit.key = this.key; 
+}
+
+function deleteLog(){
+	var ask = confirm("Are you sure you want to delete this log?");
+	if(ask) {
+		localStorage.removeItem(this.key);
+		window.location.reload();
+	}else{
+		alert("Love log was NOT deleted.")
+	}
 }
 
 function clearLocal(){
@@ -152,9 +206,67 @@ function clearLocal(){
 	}
 }
 
+function validate(e) {
+	//Define the element that we want to check.
+	var getType  = $('eventTypes');
+	var getTitle = $('title');
+	var getDate  = $('date');
+	var getWow	 = $('wow');
+
+
+	//Reset Error Messages.
+	errMsg.innerHTML = " ";
+		getType.style.border 	= "1px solid black";
+		getTitle.style.border 	= "1px solid black";
+		getDate.style.border 	= "1px solid black";
+		getWow.style.border 	= "1px solid black";
+
+	//Get Error Messages.
+	var messageAry = [];
+	//Event Type Validation
+	if(getType === "--Choose An Event Type--") {
+		var typeError = "Please choose an event type.";
+		getType.style.border = "1px solid red";
+		messageAry.push(typeError);
+	}
+	//Title Validation
+	if(getTitle === " ") {
+		var titleError = "Please enter a title.";
+		getTitle.style.border = "1px solid red";
+		messageAry.push(titleError);
+	}
+	//Date Validation
+	if(getDate === " ") {
+		var dateError = "Please enter a date.";
+		getDate.style.border = "1px solid red";
+		messageAry.push(dateError);
+	}
+	//Wow Validation
+	if(getWow === " ") {
+		var wowError = "Please rate the event.";
+		getWow.style.border = "1px solid red";
+		messageAry.push(wowError);
+	}
+	//If there were any errors, display on the screen.
+	if(messageAry.length >= 1) {
+		for(var i=0, j=messageAry.length; i < j; i++) {
+			var txt = document.createElement('li');
+			txt.innerHTML = messageAry[i];
+			errMsg.appendChild(txt);
+		}
+		e.preventDefault();
+		return false;
+	}else{//if all is ok, save the data. Send the key value (which cam from the editData function).
+			// This key value was passed through the editSubmit event listener as a property.
+		storeData(this.key);
+	}
+	
+}
+
 //Variable defaults
 var eventTypes = ["--Choose An Event Type--", "Agape[of the soul]", "Eros[of passion]", "Philia[of the mind]", "Storge[parental]", "Xenia[hospitality]"],
-	roleValue
+	roleValue,
+	errMsg = $('errors');
 ;
 
 makeCats();
@@ -168,7 +280,7 @@ displaylink.addEventListener("click", getData);
 var clearLink = $('clear');
 clearLink.addEventListener("click", clearLocal);
 var save = $('submit');
-save.addEventListener("click", storeData);
+save.addEventListener("click", validate);
 
 
 });
