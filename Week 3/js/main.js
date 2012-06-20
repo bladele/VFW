@@ -15,7 +15,7 @@ function $(x){
 	return theElement;
 	}
 
-//Create select fiel element and populate with options.
+//Create select field element and populate with options.
 function makeCats(){
 	var formTag = document.getElementsByTagName("form"), //formTag is an array of all the form tags.
 		selectLi = $('select'),
@@ -90,7 +90,8 @@ function storeData(key){
 function getData(){
 	toggleControls("on");
 	if(localStorage.length === 0){
-		alert("There are no logs in Local Storage.")
+		alert("There are no logs in Local Storage, so default data has been added.");
+		autoFillData();
 	}
 	//Write Data from Local Storage to the browser.
 	var makeDiv = document.createElement('div');
@@ -118,6 +119,16 @@ function getData(){
 		}
 		makeEventLinks(localStorage.key(i), linksLi); //Creat edit and delet buttons/link for each item in local storage.
 
+	}
+}
+
+//Auto Populate Local Storage
+function autoFillData() {
+	/*Actual JSON Object data required for this to work is coming from our json.js file, which is loaded from
+	our HTML page. Store the JSON Object in local storage. */
+	for(var n in json) {
+		var id = Math.floor(Math.random()*1000000001);
+		localStorage.setItem(id, JSON.stringify(json[n]));
 	}
 }
 
