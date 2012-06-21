@@ -1,0 +1,82 @@
+/* Title: form.html Styles
+by: Bodunrin Ladele
+for: VFW 1206
+*/
+
+
+/*Make it look like an iPhone*/
+html {
+    	background-color: #F7EDDA;
+    	
+
+	}
+
+/*Logo possitioning*/
+img { margin: 0px; float: right;
+}
+
+h1 {	font-family: 'IM Fell Great Primer SC', serif;
+		color: #7F0813;
+		margin: 10px 20px;
+		border: 5px solid #7F0813;
+		border-radius:10px;
+		padding: 10px;
+		background-color: #EAD4B0;
+		width: 85%;
+		text-align: center;
+		visibility: ;
+		word-wrap:;
+		
+	}
+
+/*Make it look like an iPhone*/
+body{ font: cursive;
+	}
+
+/*Descendant selectors*/
+form ul{ margin: 10px; padding: 10;  
+		}	
+
+p 	{
+		color: #41587A;
+		font-family: 'IM Fell Great Primer SC', serif;
+		font-weight: bold;
+		font: italic small bold 12px Arial;
+		line-height:22px;
+		letter-spacing: .08em;
+		text-align: left;
+		text-indent:;
+	}
+
+#eventLog legend { font-weight: bold;
+		  		   font: 200% cursive;
+		  		   color: #7F0813;
+				}
+
+
+#items ul li {  background-color: #F0EAD6; 
+				border-radius:10px;
+				padding: 10px; 
+				margin: 10px;
+ 			}
+
+#items ul li ul {  font-family: 'Satisfy', cursive;
+				   border: 5px solid #7F0813;
+				   border-radius:10px;
+ 			}
+
+label {
+		display: block;
+	  }
+
+/*Attribute selector*/
+[type= 'radio'] {border: none; width: inherit; display: inline;}
+
+/*Descendant selectors*/
+a:link{ color: #7F0813; }	
+a:visited{ color: #3A2C2C;}
+
+
+
+
+
